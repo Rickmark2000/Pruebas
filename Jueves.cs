@@ -93,11 +93,11 @@ namespace Pruebas
                         {
                             if(numB == 0)
                             {
-                               numB = comprobacion0(numB);
+                               numB = validarDivision(numB);
                             }
                             else
                             {
-                               numA = comprobacion0(numA);
+                               numA = validarDivision(numA);
                             }
                             
                         }
@@ -127,7 +127,7 @@ namespace Pruebas
             return num = Convert.ToInt32(Console.ReadLine());
         }
 
-        public static int comprobacion0(int num)
+        public static int validarDivision(int num)
         {
             bool esValido = false;
             int numeroValido= 0;
