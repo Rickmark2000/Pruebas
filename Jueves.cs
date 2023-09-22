@@ -101,10 +101,8 @@ namespace Pruebas
                             }
                             
                         }
-                        else
-                        {
-                            resultado = numA / numB;
-                        }
+                        resultado = numA / numB;
+                        
                         Console.WriteLine("La división de " + numA + " y " + numB + " es: " + resultado);
                        
                         break;
