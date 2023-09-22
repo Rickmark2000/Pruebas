@@ -11,16 +11,16 @@ namespace Pruebas
     {
         static void Main(string[] args)
         {
-            /*
+           /*
            variables();
            usuario();
            pedirEdados();
            PedirEdadesCorregido();
            calificaciones();
-            */
+           */
 
-            calculadora();
-
+            
+           calculadora();
         }
 
         public static void calculadora()
@@ -54,10 +54,9 @@ namespace Pruebas
                 try
                 {
                     Console.WriteLine("Introduce el 1ºnúmero");
-                    numA = Convert.ToInt32(Console.ReadLine());
-
+                    numA = leerNum();
                     Console.WriteLine("Introduce el 2ºnúmero");
-                    numB = Convert.ToInt32(Console.ReadLine());
+                    numB = leerNum();
 
                     esNumero = true;
                 }
@@ -72,7 +71,7 @@ namespace Pruebas
             do
             {
                 Console.WriteLine("1) Sumar\n2) Restar\n3) dividir\n4) multiplicar\n0) Salir");
-                opción = Convert.ToInt32(Console.ReadLine());
+                opción = leerNum();
 
                 switch (opción)
                 {
@@ -89,15 +88,25 @@ namespace Pruebas
                         textoResultado = "La resta de " + numA + " y " + numB + " es: " + resultado;
                         break;
                     case 3:
-                        try
+                        //Validar si es o no cero. Do while hasta que sea != 0
+                        if(numB == 0 || numA == 0)
+                        {
+                            if(numB == 0)
+                            {
+                               numB = comprobacion0(numB);
+                            }
+                            else
+                            {
+                               numA = comprobacion0(numA);
+                            }
+                            
+                        }
+                        else
                         {
                             resultado = numA / numB;
-                            Console.WriteLine("La división de " + numA + " y " + numB + " es: " + resultado);
                         }
-                        catch (DivideByZeroException)
-                        {
-                            textoResultado = "NO SE PUEDE DIVIDIR ENTRE CERO";
-                        }
+                        Console.WriteLine("La división de " + numA + " y " + numB + " es: " + resultado);
+                       
                         break;
                     case 4:
                         resultado = numA * numB;
@@ -110,6 +119,37 @@ namespace Pruebas
                 Console.WriteLine(textoResultado);
             } while (opción != 0);
 
+        }
+
+        public static int leerNum()
+        { //leer numero y comprobar si es distinto de 0
+            int num = 0;
+            return num = Convert.ToInt32(Console.ReadLine());
+        }
+
+        public static int comprobacion0(int num)
+        {
+            bool esValido = false;
+            int numeroValido= 0;
+
+            do
+            {
+                Console.WriteLine("Introduce un número valido para dividir");
+                numeroValido = leerNum();
+                if (numeroValido == 0)
+                {
+                    esValido = false;
+                    Console.WriteLine(num + " no es distinto de 0");
+                }
+                else
+                {
+                    esValido = true;
+                    Console.WriteLine(num + " es distinto de 0");
+                }
+
+            } while (!esValido);
+
+           return numeroValido;
         }
         public static void calificaciones()
         {
