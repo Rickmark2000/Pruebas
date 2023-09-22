@@ -19,6 +19,13 @@ namespace Pruebas
            calificaciones();
             */
 
+            calculadora();
+
+        }
+
+        public static void calculadora()
+        {
+
             /* 
                   * Pedir dos  números enteros al usuario. Pedir hasta que lo que escriba sea un número. Si no es un número,
                   * Le diremos: "Dato incorrecto, inserta un número, por favor. Y volvemos a leerle
@@ -67,14 +74,14 @@ namespace Pruebas
                 Console.WriteLine("1) Sumar\n2) Restar\n3) dividir\n4) multiplicar\n0) Salir");
                 opción = Convert.ToInt32(Console.ReadLine());
 
-                switch(opción)
+                switch (opción)
                 {
                     case 0:
                         textoResultado = "Muchas gracias por usar la aplicación";
-                        break; 
+                        break;
                     case 1:
                         resultado = numA + numB;
-                        textoResultado = "La suma de "+ numA+" y " +numB+" es: "+resultado;
+                        textoResultado = "La suma de " + numA + " y " + numB + " es: " + resultado;
                         break;
 
                     case 2:
@@ -96,13 +103,12 @@ namespace Pruebas
                         resultado = numA * numB;
                         textoResultado = "La multiplicación de " + numA + " y " + numB + " es: " + resultado;
                         break;
-                    default: 
+                    default:
                         textoResultado = "OPCIÓN DE MENÚ NO VÁLIDA";
                         break;
                 }
                 Console.WriteLine(textoResultado);
             } while (opción != 0);
-            
 
         }
         public static void calificaciones()
