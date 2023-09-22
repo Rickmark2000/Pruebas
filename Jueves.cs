@@ -60,8 +60,11 @@ namespace Pruebas
                 calificacion = "¡Esa nota es irreal!";
             }
 
-
+            Console.BackgroundColor = ConsoleColor.Green;
             Console.WriteLine(calificacion);
+            //
+            //sassasasasasa
+           
         }
 
         public static void variables()
