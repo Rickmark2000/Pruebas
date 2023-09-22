@@ -62,8 +62,6 @@ namespace Pruebas
 
             Console.BackgroundColor = ConsoleColor.Green;
             Console.WriteLine(calificacion);
-            //fdfdsffsfsfsf
-            //sassasasasasa
            
         }
 
